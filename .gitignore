@@ -1,0 +1,4 @@
+# Aqui se pone los archivos ignorados al subir
+.env
+node_modules
+src/public/upload/temp

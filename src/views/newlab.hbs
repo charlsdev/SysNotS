@@ -1,0 +1,126 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/sweetalert2/sweetalert2.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/letrasFormat.css" type="text/css">
+      <link rel="stylesheet" href="/css/designButton.css" type="text/css">
+   </head>
+
+   <body>
+
+      {{> navigationN}}
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+
+      <div class="container">
+         <br>
+         <center><h2 class="h2"><b>News Laboratorios LabSys</b></h2></center>
+         
+         <br>
+         <div class="row">
+            <div class="col-md-12" style="opacity: 0.9;">
+               <form class="was-validated" action="/newlab" method="post">
+                  <div class="card border-info mb-3">
+                     <div class="card-header bg-info text-white">
+                        <b style="font-size: 20px;">&nbsp;&nbsp;REGISTRO DE LABORATORIO</b>
+                     </div>
+
+                     <div class="card-body text-info">
+                        <div class="form-row">
+                           <div class="col-md-5">
+                              <h5 class="h5">Datos Personales - Laboratorista</h5>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-2 mb-3">
+                              <b><label># de Identificación :</label></b>
+                              <input type="text" class="form-control" id="cedula" name="cedula" onkeypress="return numeros(event)" onkeyUp="return Cedula(this);" maxlength="10" required autofocus>
+                           </div>
+
+                           <div class="col-md-6 mb-3">
+                              <b><label>Apellidos y Nombres :</label></b>
+                              <input type="text" class="form-control" id="apename" name="apename" onkeypress="return letra(event)" required>
+                              
+                           </div>
+                           
+                           <div class="col-md-1 mb-3">
+                              <b><label>Edad :</label></b>
+                              <input type="text" class="form-control" id="edad" name="edad" onkeypress="return numeros(event)" maxlength="3" required>
+                           </div>
+
+                           <div class="col-md-3 mb-3">
+                              <b><label>Sexo : </label></b> 
+                              <select name="sexo" id="sexo" required class="custom-select">
+                                 <option disabled selected value="">Seleccionar...</option>
+                                 <option value="Masculino">Masculino</option>
+                                 <option value="Femenino">Femenino</option>
+                                 <option value="NDefinido">No definido</option>
+                              </select>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-4 mb-3">
+                              <b><label>Direccion Domiciliaria :</label></b>
+                              <input type="text" class="form-control" id="direccion" name="direccion" onkeypress="return direccionD(event)" required>
+                           </div>
+                           
+                           <div class="col-md-4 mb-3">
+                              <b><label>Correo :</label></b>
+                              <input type="email" class="form-control" id="email" name="email" onkeypress="return emailD(event)" style="text-transform: lowercase;" required>
+                           </div>
+
+                           <div class="col-md-2 mb-3">
+                              <b><label>Telefono :</label></b>
+                              <input type="tel" class="form-control" id="telefono" name="telefono" onkeypress="return telefonoD(event)" maxlength="10" required>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-5">
+                              <h5 class="h5" style="margin-top: 15px;">Datos del Laboratorio</h5>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-4 mb-3">
+                              <b><label>Nombre del Laboratorio :</label></b>
+                              <input type="text" class="form-control" id="nameLab" name="nameLab" onkeypress="return direccionD(event)" required>
+                           </div>
+
+                           <div class="col-md-4 mb-3">
+                              <b><label>Direccion Laboratorio :</label></b>
+                              <input type="text" class="form-control" id="direccionLab" name="direccionLab" onkeypress="return direccionD(event)" required>
+                           </div>
+                           
+                           <div class="col-md-2 mb-3">
+                              <b><label>Telefono Laboratorio:</label></b>
+                              <input type="text" class="form-control" id="telefonoLab" name="telefonoLab" onkeypress="return telefonoD(event)" maxlength="10" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <br>
+                  <button class="btn float-right col-md-3" id="Enviar" type="submit" disabled>
+                     &nbsp;&nbsp;&nbsp;
+                     <i class="fas fa-user-plus"></i>
+                     &nbsp;&nbsp;
+                     Registrar...
+                     &nbsp;&nbsp;&nbsp;
+                  </button>
+
+               </form>
+            </div>
+         </div>
+
+         <br><br>
+
+		</div>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/sweetalert2/sweetalert2.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+      <script src="/js/validation.js"></script>

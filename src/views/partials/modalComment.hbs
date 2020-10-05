@@ -1,0 +1,192 @@
+﻿<div class="modal fade bd-example-modal-lg" id="datos_usuario" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+   aria-hidden="true">
+   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+         <div class="modal-header"
+            style="background: linear-gradient(to bottom right, #c0c0aa, #4AC29A, #c0c0aa, #4AC29A); text-transform: uppercase;">
+            <center>
+               <h5 class="modal-title" style="color: #fff;"><b>Enviar Comentario</b></h5>
+            </center>
+            <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true"
+               style="color: #fff;">&times;</button>
+         </div>
+
+         <form class="was-validated" action="/commentsNew" method="post">
+
+            <div class="modal-body">
+               <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                     <h3 class="badge badge-pill badge-success" style="font-size: 1.0em;">{{apellidos }} {{nombres}}</h3>
+                  </div>
+      
+                  <div>
+                     <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="popover" data-placement="left" data-trigger="focus" title="Information?" data-content="Envie sus comentarios e inclusive opiniones que ayuden a mejorar la aplicación.">
+                        <b><i class="far fa-question-circle"></i></b>
+                     </button>
+                  </div>
+               </div>
+
+               <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                     <img src="/img/user.svg" alt="User Community" height="40px" width="40px">&nbsp;&nbsp;
+                     <b><label style="color:#000;">User : </label></b>&nbsp;&nbsp;
+                     <h3 class="badge badge-pill badge-primary" style="font-size: 0.8em;">{{userName}}</h3>
+                  </div>
+      
+                  <div>
+                     <img src="/img/datetime.svg" alt="Fecha de Publicación" height="40px" width="40px">&nbsp;&nbsp;
+                     <b><label style="color:#000;">Fecha : </label></b> &nbsp;&nbsp;
+                     <h3 class="badge badge-pill badge-danger" style="font-size: 0.8em;" id="datetime">hola</h3>
+                  </div>
+               </div>
+
+               <input type="hidden" class="form-control" id="user" name="user" value="{{userName}}" readonly>
+               <input type="hidden" class="form-control" id="username" name="username" value="{{apellidos }} {{nombres}}" readonly>
+               <input type="hidden" class="form-control" id="profile" name="profile" value="{{profile}}" readonly>
+
+               <hr>
+               <b><label style="color:#000">Comentario : </label></b><br>
+               <textarea class="form-control" name="comentario" id="comentario" rows="5" required></textarea>
+            </div>
+
+            <div class="modal-footer" style="background:#D2D8D4;">
+               <button type="submit" class="btn btn-outline-danger btn-sm px-5">
+                  <i class="far fa-share-square"></i>
+                  &nbsp;&nbsp;
+                  <b>Guardar</b>
+               </button>
+            </div>
+
+         </form>
+
+      </div>
+   </div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" id="profilePhotoUser" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+   aria-hidden="true">
+   <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+      <div class="modal-content">
+         <div class="modal-header"
+            style="background: linear-gradient(to bottom right, #c0c0aa, #4AC29A, #c0c0aa, #4AC29A); text-transform: uppercase;">
+            <center>
+               <h5 class="modal-title" style="color: #fff;"><b>Change Photo Profile</b></h5>
+            </center>
+            <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true"
+               style="color: #fff;">&times;</button>
+         </div>
+
+         <form action="/profilePhoto" method="post" enctype="multipart/form-data">
+         {{!-- <form action="/profilePhoto" method="post"> --}}
+            <div class="modal-body">
+               <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                     <img src="/img/user.svg" alt="User Community" height="40px" width="40px">&nbsp;&nbsp;
+                     <b><label style="color:#000;">User : </label></b>&nbsp;&nbsp;
+                     <h3 class="badge badge-pill badge-primary" style="font-size: 0.8em;">{{userName}}</h3>
+                  </div>
+      
+                  <div>
+                     <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="popover" data-placement="bottom" data-trigger="focus" data-content="Cambie su foto de perfil.">
+                        <b><i class="far fa-question-circle"></i></b>
+                     </button>
+                  </div>
+               </div>
+
+               {{!-- <hr> --}}
+               <input type="hidden" class="form-control" id="userProfile" name="userProfile" value="{{userName}}">
+               
+               <hr>
+               <img src="/upload/{{profile}}" id="imgSalida" class="img-thumbnail d-block m-4 mx-auto" width="150px" height="150px">
+
+               <hr>
+               <div class="custom-file">
+                  <input type="file" class="custom-file-input" name="profilePhoto" id="profilePhoto" capture="camera" accept="image/*" lang="es">
+                  <label class="custom-file-label" for="profilePhoto">Seleccionar Archivo</label>
+               </div>
+
+               <hr>
+            </div>
+
+            <div class="modal-footer" style="background:#D2D8D4;">
+               <button type="submit" class="btn btn-outline-danger btn-sm px-5" id="btnCambiar" disabled>
+                  <i class="far fa-share-square"></i>
+                  &nbsp;&nbsp;
+                  <b>Cambiar</b>
+               </button>
+            </div>
+
+         </form>
+
+      </div>
+   </div>
+</div>
+
+<div class="modal fade" id="profileChange" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+         <div class="modal-header"
+            style="background: linear-gradient(to bottom right, #c0c0aa, #4AC29A, #c0c0aa, #4AC29A); text-transform: uppercase;">
+            <center>
+               <h5 class="modal-title" style="color: #fff;"><b>Datos Personales</b></h5>
+            </center>
+            <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true"
+               style="color: #fff;">&times;</button>
+         </div>
+
+         <form action="" method="post">
+         {{!-- <form action="/profilePhoto" method="post"> --}}
+            <div class="modal-body">
+               <div class="form-row">
+                  <div class="col-md-6">
+                     <b><label style="color:#000">Username : </label></b>
+                     <input type="text" class="form-control" id="userName" name="userName" value="{{userName}}" disabled>
+                  </div>
+
+                  <div class="col-md-6">
+                     <b><label style="color:#000">Cedula : </label></b>
+                     <input type="text" class="form-control" id="userCedula" name="userCedula" value="{{cedula}}" disabled>
+                  </div>
+               </div>
+               
+               <hr>
+               <b><label style="color:#000">Apellidos y Nombres : </label></b>
+               <input type="text" class="form-control" id="apeName" name="apeName" value="{{apellidos}} {{nombres}}" disabled>
+
+               <hr>
+               <div class="form-row">
+                  <div class="col-md-6">
+                     <b><label style="color:#000">Edad : </label></b>
+                     <input type="text" class="form-control" id="userEdad" name="userEdad" value="{{edad}}" disabled>
+                  </div>
+                  
+                  <div class="col-md-6">
+                     <b><label style="color:#000">Género : </label></b>
+                     <select name="userSexo" id="userSexo" class="custom-select" disabled>
+                        <option disabled selected value="">Seleccionar...</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Femenino">Femenino</option>
+                        <option value="NDefinido">No definido</option>
+                     </select>
+                  </div>
+               </div>
+
+               <hr>
+               <b><label style="color:#000">Correo Electrónico : </label></b>
+               <input type="text" class="form-control" id="userEmail" name="userEmail" value="{{email}}" disabled>
+            </div>
+
+            <div class="modal-footer" style="background:#D2D8D4;">
+               <button type="submit" class="btn btn-outline-success btn-sm px-5" disabled>
+                  <i class="far fa-share-square"></i>
+                  &nbsp;&nbsp;
+                  <b>Guardar</b>
+               </button>
+            </div>
+
+         </form>
+
+      </div>
+   </div>
+</div>

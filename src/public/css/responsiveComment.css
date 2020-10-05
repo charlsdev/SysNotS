@@ -1,0 +1,17 @@
+@media screen and (max-width: 780px){
+	#userProfile {
+      display: none;
+      /* visibility: hidden; */
+   }
+
+   .h2 {
+      font-size: 1.9em;
+   }
+}
+
+@media screen and (max-width: 500px){
+   #dFlex {
+      flex-direction: column;
+      
+   }
+}

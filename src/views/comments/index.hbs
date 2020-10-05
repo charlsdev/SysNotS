@@ -1,0 +1,98 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/letrasFormat.css" type="text/css">
+      <link rel="stylesheet" href="/css/designButton.css" type="text/css">
+      <link rel="stylesheet" href="/css/responsiveComment.css" type="text/css">
+   </head>
+
+   <body>
+
+      {{> navigationN}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+      
+      <div class="container">
+         <br>
+         <center></center><h2 class="h2"><b>Comentarios SysNot'S</b></h2></center>
+   
+         <br>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="card-group">
+                  {{#if listComments}}
+                     {{#each listComments}}
+                        <div class="col-md-10 mx-auto">
+                           <div class="card border-info mb-3" style="opacity: 0.9;">
+                              <div class="card-body text-info">
+                                 <div class="media">
+                                    <img src="/upload/{{profile}}" id="userProfile" class="align-self-start mr-3" width="90px" height="110px" style="/*background-color: #000;*/ border-radius: 0 10px;">
+
+                                    <div class="media-body">
+                                       <h3 class="badge badge-pill badge-success mt-0" style="font-size: 1.0em;">{{username}}</h3>
+                                       <p>
+                                          <div id="dFlex" class="d-flex justify-content-between">
+                                          {{!-- <div class="justify-content-between align-items-center"> --}}
+                                             <div class="">
+                                                <img src="/img/user.svg" alt="User Community" height="40px" width="40px">&nbsp;&nbsp;
+                                                <b><label style="color:#000;">User : </label></b>&nbsp;
+                                                <h3 class="badge badge-pill badge-primary" style="font-size: 0.8em;">{{usuario}}</h3>
+                                             </div>
+                                 
+                                             <div class="">
+                                                <img src="/img/datetime.svg" alt="Fecha de Publicación" height="35px" width="35px">&nbsp;&nbsp;
+                                                <b><label style="color:#000;">Date : </label></b>&nbsp;
+                                                <h3 class="badge badge-pill badge-danger" style="font-size: 0.8em;">{{timeago createdAt}}</h3>
+                                             </div>
+
+                                             <div class="">
+                                                <img src="/img/comments.svg" alt="SysNot'S" height="35px" width="35px">&nbsp;&nbsp;
+                                                <b><label style="color:#000;">Fuente : </label></b>&nbsp;
+                                                <h3 class="badge badge-pill badge-info" style="font-size: 0.8em;">SysNot'S</h3>
+                                             </div>
+                                          </div>
+
+                                          <hr>
+                                          <p class="card-text"><b>Comentario:</b><br>&nbsp;&nbsp;{{comentario}}</p>
+                                          
+                                          <hr>
+                                       </p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     {{/each}}
+                  {{else}}
+                     <br><br>
+                     <div class="col-md-8 mx-auto" style="opacity: 0.9;">
+                        <div class="card border-danger mb-3">
+                           <div class="card-header bg-danger text-white">COMENTARIOS</div>
+                           <div class="card-body text-danger">
+                              <p class="card-text"><b>Information:</b><br>&nbsp;&nbsp;Se le informa que no existe ningún comentario por el momento...</p>
+                              <p class="card-text"><b>Agregar New Laboratorio:</b><br>&nbsp;&nbsp;Si deseas comentar inicia sesión con tu user and password a la APP...</p>
+                           </div>  
+   
+                           <div class="card-footer bg-transparent border-danger">
+                              <center>
+                                 <a class="btn col-md-5 mx-auto" id="Enviar2">
+                                    <i class="fab fa-rev"></i>
+                                    SysNot'S
+                                 </a>
+                              </center>
+                           </div>  
+                           
+                        </div>
+                     </div>
+                  {{/if}}
+               </div>
+            </div>
+         </div>
+         
+         <br><br>
+      </div>
+      
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>

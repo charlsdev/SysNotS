@@ -1,0 +1,85 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/letrasFormat.css" type="text/css">
+      <link rel="stylesheet" href="/css/designButton.css" type="text/css">
+      <style>
+         h2 {
+            color: #000;
+            font-size: 35px;
+            font-weight: bold; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow:   
+                           0 0 0px rgba(0,0,0,.1),
+                           0 6px 3px rgba(0,0,0,.3),
+                           0 12px 6px rgba(0,0,0,.2),
+                           0 18px 18px rgba(0,0,0,.4);
+         }
+      </style>
+   </head>
+
+   <body>
+
+      {{> navigationNotes}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+
+      <div class="container">
+         <br>
+         {{> errors}}
+         <br>
+
+         <div class="row">
+            <div class="col-md-5 mx-auto" style="opacity: 0.8;">
+               <form class="was-validated" action="/notes/newNotes" method="post">
+                  <div class="card border-info mb-3">
+                     <div class="card-header bg-info text-white">
+                        <b style="font-size: 20px;">&nbsp;&nbsp;REGISTRAR NUEVA NOTA</b>
+                     </div>
+
+                     <div class="card-body text-info">
+                        <div class="form-row">
+                           <img class="mx-auto" src="/img/SysNot'S2.png" height="120px" width="120px">
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-12 mb-3">
+                              <b><label>Titulo :</label></b>
+                              <input type="text" class="form-control" id="titulo" name="titulo" value="{{tituloN}}" required autofocus>
+                           </div>
+                        </div>
+
+                        <div class="form-row">
+                           <div class="col-md-12 mb-3">
+                              <b><label>Descipción :</label></b>
+                              <textarea class="form-control" id="descripcion" name="descripcion" rows="6" required>{{descripcionN}}</textarea>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  
+                  <button class="btn float-right col-md-6" id="Enviar" type="submit">
+                     &nbsp;&nbsp;&nbsp;
+                     <i class="fas fa-user-plus"></i>
+                     &nbsp;&nbsp;
+                     Guardar...
+                     &nbsp;&nbsp;&nbsp;
+                  </button>
+               </form>
+            </div>
+         </div>
+
+		</div>
+		
+      <br>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+
+      {{> modalComment}}
+
+      {{> datetime}}

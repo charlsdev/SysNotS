@@ -1,0 +1,89 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/swiper.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/team.style.css" type="text/css">
+      <link rel="stylesheet" href="/css/letrasFormat.css" type="text/css">
+   </head>
+
+   <body>
+
+      {{> navigationN}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+      
+      <br>
+      <center></center><h2 class="h2"><b>Innova Tech'S Team</b></h2></center>
+
+      <!-- Swiper -->
+      <div class="swiper-container">
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+               <div class="imgBox">
+                  <img src="/img/Innova Tech'S.png" id="teamID">
+               </div>
+               <div class="details" style="color:#000;" id="details6">
+                  <center><h5>Innova Tech'S</h5><hr><h6><span>Innova Tech'S Team</span></h6></center>
+               </div>
+            </div>
+
+            <div class="swiper-slide">
+               <div class="imgBox">
+                  <img src="/img/Iam.jpg">
+               </div>
+               <div class="details" style="color:#000;" id="details1">
+                  <center><h5>Carlos VP</h5><hr><h6><span>Innova Tech'S Developer</span></h6></center>
+               </div>
+            </div>
+
+            <div class="swiper-slide">
+               <div class="imgBox">
+                  <img src="/img/SysNot'S2.png" style="margin-top: 15%;">
+               </div>
+               <div class="details" style="color:#000;" id="details3">
+                  <center><h5>SysNot'S</h5><hr><h6><span>Main Icon</span></h6></center>
+               </div>
+            </div>
+
+            <div class="swiper-slide"> 
+               <div class="imgBox">
+                  <img src="/img/Patu.jpg">
+               </div>
+               <div class="details" style="color:#000;" id="details2">
+                  <center><h5>Patu and I</h5><hr><h6><span>Innova Tech'S Lazy</span></h6></center>
+               </div>
+            </div>
+            
+         </div>
+         
+         <!-- Add Pagination -->
+         <div class="swiper-pagination"></div>
+      </div>
+		
+		<br><br>
+      
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+      <script src="/js/swiper.min.js"></script>
+
+      <script>
+         var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+               rotate: 50,
+               stretch: -25,
+               depth: 100,
+               modifier: 1,
+               slideShadows : true,
+            },
+            pagination: {
+               el: '.swiper-pagination',
+            },
+         });
+      </script>

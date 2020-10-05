@@ -1,0 +1,156 @@
+<div class="row-cols-12">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      &nbsp;
+      <img src="/img/SysNot'S2.png" id="img_logo"/>
+      
+      &nbsp;&nbsp;&nbsp;
+      <a class="navbar-brand" href="/user"><b>SysNot'S</b></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+         <ul class="navbar-nav mr-auto">
+            
+            {{#if admin}}
+               <li class="nav-item">
+                  <a class="nav-link" href="/newAdmin">
+                     <b>
+                        &nbsp;&nbsp;
+                        <i class="far fa-address-book" style="color: #fff;"></i>
+                        &nbsp;
+                        Register New
+                     </b>
+                  </a>
+               </li>
+            {{else}}
+               <li class="nav-item">
+                  <a class="nav-link" href="/notes">
+                     <b>
+                        &nbsp;&nbsp;
+                        <i class="far fa-address-book" style="color: #fff;"></i>
+                        &nbsp;
+                        Notas Personales
+                     </b>
+                  </a>
+               </li>
+
+               <li class="nav-item">
+                  <a class="nav-link" href="/notes/newNotes">
+                     <b>
+                        &nbsp;&nbsp;
+                        <i class="fas fa-plus" style="color: #fff;"></i>
+                        &nbsp;
+                        AGG Nota
+                     </b>
+                  </a>
+               </li>
+            {{/if}}
+
+         </ul>
+
+         {{#if admin}}
+            <li class="nav-link dropdown pr-5">
+               <a class="nav-link dropdown-toggle" style="color:#fff" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i>&nbsp;&nbsp;</i><b>{{userName}}</b> </a>
+
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <img src="/upload/{{profile}}" id="imgSalida" class="rounded-circle img-thumbnail d-flex mx-auto" width="135px" height="135px">
+                  <center>
+                     <a class="mx-auto badge badge-info" data-toggle='modal' data-target='#profilePhotoUser' style="color: #fff;">
+                        Change Photo Profile
+                     </a>
+                  </center>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#datos_usuario'>
+                     <i class="far fa-comments"></i>
+                     &nbsp;
+                     <b>
+                        Comentar &nbsp;&nbsp;&nbsp;<span class="badge badge-danger">{{numComments}}</span>
+                     </b>
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#profilePhotoUser'>
+                     <i class="far fa-id-badge"></i>
+                     &nbsp;
+                     <b>
+                        Foto de Perfil
+                     </b>
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#profileChange'>
+                     <i class="far fa-address-card"></i>
+                     &nbsp;
+                     <b>
+                        Change Profile <br> Dates
+                     </b>
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/user/logout">
+                     <i class="fas fa-sign-out-alt"></i>
+                     &nbsp;
+                     <b>
+                        Cerrar Sesion
+                     </b>
+                  </a>
+
+               </div>
+            </li>
+         {{else}}
+            <li class="nav-link dropdown pr-5">
+               <a class="nav-link dropdown-toggle" style="color:#fff" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-users-cog"></i>&nbsp;&nbsp;</i><b>{{userName}}</b> </a>
+
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <img src="/upload/{{profile}}" id="imgSalida" class="rounded-circle img-thumbnail d-flex mx-auto" width="135px" height="135px">
+                  <center>
+                     <a class="mx-auto badge badge-info" data-toggle='modal' data-target='#profilePhotoUser' style="color: #fff;">
+                        Change Photo Profile
+                     </a>
+                  </center>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#datos_usuario'>
+                     <i class="far fa-comments"></i>
+                     &nbsp;
+                     <b>
+                        Comentar &nbsp;&nbsp;&nbsp;<span class="badge badge-danger">{{numComments}}</span>
+                     </b>
+                  </a>
+
+                  {{!-- <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#profilePhotoUser'>
+                     <i class="far fa-id-badge"></i>
+                     &nbsp;
+                     <b>
+                        Foto de Perfil
+                     </b>
+                  </a> --}}
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" data-toggle='modal' data-target='#profileChange'>
+                     <i class="far fa-address-card"></i>
+                     &nbsp;
+                     <b>
+                        Change Profile <br> Dates
+                     </b>
+                  </a>
+
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/user/logout">
+                     <i class="fas fa-sign-out-alt"></i>
+                     &nbsp;
+                     <b>
+                        Cerrar Sesion
+                     </b>
+                  </a>
+
+               </div>
+            </li>
+         {{/if}}
+         
+      </div>
+   </nav>
+</div>

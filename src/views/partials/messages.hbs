@@ -1,0 +1,54 @@
+{{#if success_msg}}
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <h5 style="text-align: justify; font-weight: bold;" class="alert-heading">AVISO</h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{success_msg}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/if}}
+
+{{#if error_msg}}
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <h5 style="text-align: justify; font-weight: bold;"><strong>AVISO</strong></h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{error_msg}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/if}}
+
+{{#if error}}
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <h5 style="text-align: justify; font-weight: bold;">AVISO</h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{error}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/if}}
+
+{{#if warning_msg}}
+   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <h5 style="text-align: justify; font-weight: bold;">AVISO</h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{warning_msg}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/if}}
+
+{{#if info_msg}}
+   <div class="alert alert-info alert-dismissible fade show" role="alert">
+      <h5 style="text-align: justify; font-weight: bold;">AVISO</h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{info_msg}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/if}}

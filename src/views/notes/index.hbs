@@ -1,0 +1,111 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/designButton.css" type="text/css">
+      <style>
+         h2 {
+            color: #000;
+            font-size: 35px;
+            font-weight: bold; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow:   
+                           0 0 0px rgba(0,0,0,.1),
+                           0 6px 3px rgba(0,0,0,.3),
+                           0 12px 6px rgba(0,0,0,.2),
+                           0 18px 18px rgba(0,0,0,.4);
+         }
+      </style>
+   </head>
+
+   <body>
+
+      {{> navigationNotes}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+
+      <div class="container">
+         <br>
+         <center><h2 style="color: #000;"><b>Notas Personales</b></h2></center>
+         <br>
+         
+         {{> messages}}
+         
+         <br>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="card-group">
+                  {{#if listNotas}}
+                     {{#each listNotas}}
+                        <div class="col-md-4">
+                           <div class="card border-danger mb-3" style="opacity: 0.9;">
+                              <div class="card-header bg-danger text-white">&nbsp;&nbsp;Nota # {{@index}}</div>
+                              <div class="card-body text-danger">
+                                 <p class="card-text"><b>Título:</b><br>&nbsp;&nbsp;{{titulo}}</p>
+                                 <p class="card-text" style="text-align: justify;"><b>Descripción:</b><br>&nbsp;&nbsp;{{descripcion}}</p>
+                                 <p class="card-text"><b>Creado:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{{timeago createdAt}}</p>
+                                 <p class="card-text"><b>Modificado:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{{timeago updatedAt}}</p>
+                              </div>  
+
+                              <div class="card-footer bg-transparent border-danger">
+                                 <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-6 mb-2">
+                                       <a href="/notes/editNotes/{{_id}}" class="btn col-md-12" id="Enviar">
+                                          <i class="far fa-edit"></i>
+                                          Edit
+                                       </a>
+                                    </div>
+
+                                    <div class="col-md-6 mb-2">
+                                       <form action="/notes/deleteNotes/{{_id}}?_method=DELETE" method="post">
+                                       <input type="hidden" name="_method" value="DELETE">
+                                          <button class="btn col-md-12 btn-block" id="Enviar2" type="submit">
+                                             <i class="far fa-trash-alt"></i>
+                                             Delete
+                                          </button>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>  
+                              
+                           </div>
+                        </div>
+                     {{/each}}
+                  {{else}}
+                     <br><br>
+                     <div class="col-md-8 mx-auto" style="opacity: 0.9;">
+                        <div class="card border-info mb-3">
+                           <div class="card-header bg-info text-white">NOTAS PERSONALES</div>
+                           <div class="card-body text-info">
+                              <p class="card-text"><b>Información:</b><br>&nbsp;&nbsp;Se le informa que no tiene ninguna nota agregada en la Base de Datos...</p>
+                              <p class="card-text"><b>Agregar New Nota:</b><br>&nbsp;&nbsp;Si desea ingresar una nueva nota, presione el botón...</p>
+                           </div>  
+
+                           <div class="card-footer bg-transparent border-info">
+                              <center>
+                                 <a href="/notes/newNotes" class="btn col-md-5 mx-auto" id="Enviar2">
+                                    <i class="fab fa-rev"></i>
+                                    AGG New Nota
+                                 </a>
+                              </center>
+                           </div>  
+                           
+                        </div>
+                     </div>
+                  {{/if}}
+               </div>
+            </div>
+         </div>
+		</div>
+		
+      <br><br>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+      
+      {{> modalComment}}
+      
+      {{> datetime}}

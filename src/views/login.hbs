@@ -1,0 +1,61 @@
+		<link rel="stylesheet" href="/css/poppins/css/Poppins_LT.css" type="text/css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/login.css" type="text/css">
+		<style>
+         h2 {
+            color: #000;
+            font-weight: bold; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow:   
+                           0px 0 0px rgba(0,0,0,.1),
+                           5px 5px 3px rgba(0,0,0,.3),
+                           10px 10px 6px rgba(0,0,0,.2),
+                           15px 15px 18px rgba(0,0,0,.4);
+         }
+      </style>
+   </head>
+
+      <img class="wave" src="/img/w.png">
+		<div class="container">
+			<div class="img">
+				<img src="/img/SysNot'S2.png" class="mx-auto">
+			</div>
+			<div class="login-content mx-auto">
+				<form action="/user/login" method="post">
+
+					<img src="/img/Innova Tech'S.png">
+					<h2 class="title">Welcome</h2>
+					{{> messages}}
+					<div class="input-div one">
+						<div class="i">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="div">
+							<h5>Username</h5>
+							<input type="text" class="input" name="username" minlength="7" maxlength="15" onkeypress="return userU(event)">
+						</div>
+					</div>
+						
+					<div class="input-div pass">
+						<div class="i"> 
+							<i class="fas fa-lock"></i>
+						</div>
+						<div class="div">
+							<h5>Password</h5>
+							<input type="password" class="input" name="password" autocomplete="on">
+						</div>
+					</div>
+					<br>
+					{{!-- <a href="/" class="enlace">Forgot Password?</a> --}}
+					<input type="submit" class="btn" value="Login">
+					<i><p align="center">No tienes una cuenta? <a href="/register">Registrarse</a> .</p></i>
+					</form>
+			</div>
+		</div>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/validation.js"></script>

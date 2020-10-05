@@ -1,0 +1,20 @@
+{{#each errors}}
+   <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      {{text}}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/each}}
+
+{{#each errorsFind}}
+   <div class="alert alert-{{info}} alert-dismissible fade show" role="alert">
+      {{!-- <h5 style="text-align: justify; font-weight: bold;"><strong>IMPORTANT</strong></h5> --}}
+      <h5 style="text-align: justify; font-weight: bold;"><strong>{{title}}</strong></h5>
+      <hr>
+      <h5 style="text-align: left; font-size: 0.9em;">{{text}}</h5>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+{{/each}}

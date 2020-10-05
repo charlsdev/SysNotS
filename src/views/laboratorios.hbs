@@ -1,0 +1,108 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/designButton.css" type="text/css">
+      <style>
+         h2 {
+            color: #000;
+            font-size: 35px;
+            font-weight: bold; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow:   
+                           0 0 0px rgba(0,0,0,.1),
+                           0 6px 3px rgba(0,0,0,.3),
+                           0 12px 6px rgba(0,0,0,.2),
+                           0 18px 18px rgba(0,0,0,.4);
+         }
+      </style>
+   </head>
+
+   <body>
+
+      {{> navigationN}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+
+      <div class="container">
+         <br>
+         <center><h2 style="color: #000;"><b>Laboratorios LabSys</b></h2></center>
+         <br>
+         
+         {{> messages}}
+
+         <br>
+         <div class="row">
+            <div class="col-md-12">
+               <div class="card-group">
+                  {{#if listLab}}
+                     {{#each listLab}}
+                        <div class="col-md-4">
+                           <div class="card border-info mb-3" style="opacity: 0.9;">
+                              <div class="card-header bg-info text-white">&nbsp;&nbsp;Laboratorio # {{@index}}</div>
+                              <div class="card-body text-info">
+                                 <h5 class="card-title" style="font-weight: bold;">{{nameLab}}</h5>
+                                 <p class="card-text"><b>Laboratorista:</b><br>&nbsp;&nbsp;{{apename}}</p>
+                                 <p class="card-text"><b>Direccion:</b><br>&nbsp;&nbsp;{{direccionLab}}</p>
+                                 <p class="card-text"><b>Telefono</b><br>&nbsp;&nbsp;{{telefonoLab}}</p>
+                                 <p class="card-text"><b>Correo:</b><br>&nbsp;&nbsp;{{email}}</p>
+                                 <p class="card-text"><b>Creado:</b><br>&nbsp;&nbsp;&nbsp;&nbsp;{{timeago createdAt}}</p>
+                              </div>  
+
+                              <div class="card-footer bg-transparent border-info">
+                                 <div class="row d-flex justify-content-between align-items-center">
+                                    <div class="col-md-6 mb-2">
+                                       <a href="/editLab/{{_id}}" class="btn col-md-12" id="Enviar">
+                                          <i class="far fa-edit"></i>
+                                          Edit
+                                       </a>
+                                    </div>
+
+                                    <div class="col-md-6 mb-2">
+                                       <form action="/deleteLab/{{_id}}?_method=DELETE" method="post">
+                                       <input type="hidden" name="_method" value="DELETE">
+                                          <button class="btn col-md-12 btn-block" id="Enviar2" type="submit">
+                                             <i class="far fa-trash-alt"></i>
+                                             Delete
+                                          </button>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>  
+                              
+                           </div>
+                        </div>
+                     {{/each}}
+                  {{else}}
+                     <br><br>
+                     <div class="col-md-8 mx-auto" style="opacity: 0.9;">
+                        <div class="card border-danger mb-3">
+                           <div class="card-header bg-danger text-white">LABORATORIOS</div>
+                           <div class="card-body text-danger">
+                              <p class="card-text"><b>Information:</b><br>&nbsp;&nbsp;Se le informa que no existe ninguna dato en la Base de Datos...</p>
+                              <p class="card-text"><b>Agregar New Laboratorio:</b><br>&nbsp;&nbsp;Si desea ingresar un laboratorio nuevo, presione el botón...</p>
+                           </div>  
+
+                           <div class="card-footer bg-transparent border-danger">
+                              <center>
+                                 <a href="/newlab" class="btn col-md-5 mx-auto" id="Enviar2">
+                                    <i class="fab fa-rev"></i>
+                                    AGG New Laboratorio
+                                 </a>
+                              </center>
+                           </div>  
+                           
+                        </div>
+                     </div>
+                  {{/if}}
+               </div>
+            </div>
+         </div>
+		</div>
+		
+      <br>
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>

@@ -1,0 +1,40 @@
+<script>
+   var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+
+   var d = new Date().getDate();
+   var m = new Date().getMonth();
+   var a = new Date().getFullYear();
+
+   d = (d < 10) ? "0" + d : d
+   //m = (m < 10) ? "0" + m : m
+
+   //var hours = d + " / " + m + " / " + a;
+   var date = d + " / " + meses[m] + " / " + a;
+
+   // console.log(date);
+
+   const demoId = document.querySelector('#datetime');
+   demoId.textContent = date;
+</script>
+
+<script>
+   $('.custom-file-input').on('change', (event) => {
+      var inputFile = event.currentTarget;
+      $(inputFile).parent()
+         .find('.custom-file-label')
+         .html(inputFile.files[0].name);
+   });
+</script>
+
+<script>
+   $(document).ready(function(){
+      $("#userSexo").val("{{genero}}");
+   });
+</script>
+
+{{!-- Verifica que tenga al menos una imagen escogida --}}
+<script>
+   $("#profilePhoto").change(function(){
+      $("#btnCambiar").prop("disabled", this.files.length == 0);
+   });
+</script>

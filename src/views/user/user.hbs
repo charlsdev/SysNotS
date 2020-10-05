@@ -1,0 +1,104 @@
+      <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+      <link rel="stylesheet" href="/css/estilo_g.css" type="text/css">
+      <link rel="stylesheet" href="/css/style_clock.css" type="text/css">
+      <style>
+         h2 {
+            color: #000;
+            font-size: 35px;
+            font-weight: bold; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-shadow:   
+                           0 0 0px rgba(0,0,0,.1),
+                           0 6px 3px rgba(0,0,0,.3),
+                           0 12px 6px rgba(0,0,0,.2),
+                           0 18px 18px rgba(0,0,0,.4);
+         }
+      </style>
+   </head>
+
+   <body>
+
+      {{> navigationNotes}}
+
+      <img class="wave" src="/img/w.png">
+      <img class="wave3" src="/img/Innova Tech'S.png">
+      <img class="wave4" src="/img/SysNot'S2.png">
+      
+      <br>
+      <div class="container">
+         
+         {{> messages}}
+
+         <center><h2 style="color: #000; margin: 20px;">Bienvenido :</h2></center>
+         <center><h2 style="color: #000; margin: 5px; font-size: 1.6em;">{{apellidos }} {{nombres}}</h2></center>
+         <div class="row">
+            <div class="col-md-auto mx-auto">
+            <div id="clock">
+               <div id="time">
+                  <div>
+                     <span id="hours">00</span> 
+                     <span id="H">Hours</span>
+                  </div>
+                  <div>
+                     <span id="minutes">00</span> 
+                     <span id="M">Minutes</span>
+                  </div>
+                  <div>
+                     <span id="seconds">00</span> 
+                     <span id="S">Seconds</span>
+                  </div>
+                  <div>
+                     <span id="ampm">AM</span>
+                  </div>
+
+               </div>
+            </div>
+            </div>
+         </div>
+
+         <br><br>
+
+      </div>
+
+
+      <script src="/js/jquery.min.js"></script>
+      <script src="/js/popper.min.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/css/fontawesome/js/all.min.js"></script>
+
+      {{> modalComment}}
+
+      {{> datetime}}
+      
+      <script type="text/javascript">
+         function clock() {
+            var hours = document.getElementById('hours');
+            var minutes = document.getElementById('minutes');
+            var seconds = document.getElementById('seconds');
+            var ampm = document.getElementById('ampm');
+
+            var h = new Date().getHours();
+            var m = new Date().getMinutes();
+            var s = new Date().getSeconds();
+            var am = "AM";
+
+            if (h > 12) {
+               //h = h - 12;
+               var am = "PM";
+            }
+
+            h = (h < 10) ? "0" + h : h
+            m = (m < 10) ? "0" + m : m
+            s = (s < 10) ? "0" + s : s
+            
+            hours.innerHTML = h;
+            minutes.innerHTML = m;
+            seconds.innerHTML = s;
+            ampm.innerHTML = am;
+
+         }
+
+         var interval = setInterval(clock, 1000);
+         
+      </script>
