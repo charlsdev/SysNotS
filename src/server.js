@@ -56,12 +56,13 @@ app.use((req, res, next) => {
 });
 
 //Rutas
-app.use(require('./routes/index.routes'));
-app.use(require('./routes/notes.routes'));
-app.use(require('./routes/user.routes'));
-app.use(require('./routes/comments.routes'));
-app.use(require('./routes/admin.routes'));
+//app.use(require('./routes/index.routes'));
+//app.use(require('./routes/notes.routes'));
+//app.use(require('./routes/user.routes'));
+//app.use(require('./routes/comments.routes'));
+//app.use(require('./routes/admin.routes'));
 ///app.use(require('./routes/apiFlutter.routes')); // Rutas API
+app.use(require('./routes/404.routes'));
 
 //Archivos estáticos
 app.use(express.static(path.join(__dirname + '/public')));
