@@ -3,7 +3,8 @@ const router = Router();
 
 const { 
    renderIndex, 
-   renderTeam, 
+   renderTeam,
+   render404, 
    // renderLogin, 
    renderLaboratorios, 
    renderNewLabForm, 
@@ -15,7 +16,8 @@ const {
 
 const { isAuthenticated, isAdminAuth } = require('../helpers/keysRouter');
 
-router.get('/', renderIndex);
+//router.get('/', renderIndex);
+router.get('/', render404);
 
 router.get('/team', renderTeam);
 

@@ -70,4 +70,9 @@ indexControllers.renderDeleteLab = async (req, res) => {
    res.redirect('/laboratorios');
 }
 
+//404
+indexControllers.render404 = (req, res) => {
+   res.render('404');
+}
+
 module.exports = indexControllers;
