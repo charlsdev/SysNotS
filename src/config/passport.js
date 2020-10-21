@@ -13,7 +13,7 @@ passport.use('local.login', new localStrategy({
    // Confirmar si coincide el username
    const user = await User.findOne({user: username});
    if (!user) {
-      return done(null, false, { message: 'Usuario no existente...'});
+      return done(null, false, { message: 'Usuario y/o contraseña no existentes...'});
    } else {
       // Validar la contraseña
       const passLog = await user.matchPassword(password);
@@ -21,7 +21,7 @@ passport.use('local.login', new localStrategy({
          // console.log(user);
          return done(null, user);
       } else {
-         return done(null, false, { message: 'Contraseña incorrecta...'});
+         return done(null, false, { message: 'Usuario y/o contraseña incorrecta...'});
       }
    }
 }));

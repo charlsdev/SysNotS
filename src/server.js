@@ -66,5 +66,6 @@ app.use(require('./routes/admin.routes'));
 
 //Archivos estáticos
 app.use(express.static(path.join(__dirname + '/public')));
+// app.use("/static", express.static(path.join(__dirname + '/public')));
 
 module.exports = app;
