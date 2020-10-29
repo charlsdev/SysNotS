@@ -1,5 +1,7 @@
 const { Schema, model } = require('mongoose');
 
+const User = model('User');
+
 const NotasSchema = new Schema({
    titulo: {
       type: String,
@@ -10,8 +12,9 @@ const NotasSchema = new Schema({
       required: true
    },
    userid: {
-      type: String,
-      required: true
+      // type: String,
+      // required: true
+      type: Schema.ObjectId, ref: "User"
    }
 }, {
    timestamps: true
