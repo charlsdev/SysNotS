@@ -13,6 +13,7 @@ flutterControllers.renderNotesAPI = async (req, res) => {
 
    /* ?Devuelve determinados datos del user completo */
    // const listNotasAPI = await Notas.find().populate("userid", "cedula apellidos nombres edad genero email").exec();
+   
    res.json({ notes: listNotasAPI });
 }
 
