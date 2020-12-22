@@ -35,8 +35,9 @@
                <div class="input-div one">
                </div>
 
-               <p style="text-align: justify;">SysNot'S, es un sistema de gran utilidad, el cual permite agregar notas a vuestro gusto. Sirve para guardar notas de manera ordenada y a su vez de manera clara, no solo permite guardar, sino también editar e incluso eliminar aquella nota que ya se haya cumplido.</p>
-                  
+               <p style="text-align: justify;">
+                  <span id="typed"></span>
+               </p>
             </form>
          </div>
       </div>
@@ -44,3 +45,13 @@
       <script src="/js/jquery.min.js"></script>
       <script src="/js/bootstrap.min.js"></script>
       <script src="/css/fontawesome/js/all.min.js"></script>
+      <script src="/typejs/typed.min.js"></script>
+
+      <script>
+         var typed6 = new Typed('#typed', {
+            strings: ['SysNot\'S, es un sistema de gran utilidad, el cual permite agregar notas a vuestro gusto. Sirve para guardar notas de manera ordenada y a su vez de manera clara, no solo permite guardar, sino también editar e incluso eliminar aquella nota que ya se haya cumplido.'],
+            typeSpeed: 40,
+            backSpeed: 0,
+            loop: true
+         });
+      </script>
