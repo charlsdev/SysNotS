@@ -54,38 +54,38 @@ userControllers.renderRegisterNew = async (req, res) => {
             req.flash('success_msg', 'Usuario registrado con exito...');
 
             // Enviar correos electronicos a los usuarios
-            contentHTML = `
-               <h1>Register Succesfull</h1>
-               <ul>
-                  <li>Username: ${user}</li>
-                  <li>Password: ${password}</li>
-               </ul>
-               <p>Estas son sus credenciales para iniciar sesion a la plataforma, disfrutela al máximo y exitos...</p>
-            `;
+            // contentHTML = `
+            //    <h1>Register Succesfull</h1>
+            //    <ul>
+            //       <li>Username: ${user}</li>
+            //       <li>Password: ${password}</li>
+            //    </ul>
+            //    <p>Estas son sus credenciales para iniciar sesion a la plataforma, disfrutela al máximo y exitos...</p>
+            // `;
 
-            const transporte = nodemailer.createTransport({
-               host: "mail.privateemail.com",
-               port: 587,
-               secure: false,
-               auth: {
-                  user: `${process.env.userMail}`,
-                  pass: `${process.env.passMail}`
-               },
-               // // TLS es para cualquier lugar enviar correos
-               // tls: {
-               //    // Indicamos que se enviara desde LOCALHOST
-               //    rejectUnauthorized: false
-               // }
-            });
+            // const transporte = nodemailer.createTransport({
+            //    host: "mail.privateemail.com",
+            //    port: 587,
+            //    secure: false,
+            //    auth: {
+            //       user: `${process.env.userMail}`,
+            //       pass: `${process.env.passMail}`
+            //    },
+            //    // // TLS es para cualquier lugar enviar correos
+            //    // tls: {
+            //    //    // Indicamos que se enviara desde LOCALHOST
+            //    //    rejectUnauthorized: false
+            //    // }
+            // });
 
-            const info = await transporte.sendMail({
-               from: `'CharlsDeV Server' <${process.env.userMail}>`,
-               // from: "'CharlsDeV Server' <charlsdev2309@innovatechs.xyz>",
-               to: 'youquince@gmail.com',
-               subject: 'Registro exitoso',
-               // text: "Hola mundo"
-               html: contentHTML
-            });
+            // const info = await transporte.sendMail({
+            //    from: `'CharlsDeV Server' <${process.env.userMail}>`,
+            //    // from: "'CharlsDeV Server' <charlsdev2309@innovatechs.xyz>",
+            //    to: 'youquince@gmail.com',
+            //    subject: 'Registro exitoso',
+            //    // text: "Hola mundo"
+            //    html: contentHTML
+            // });
 
             res.redirect('/login');
          }
