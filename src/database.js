@@ -9,7 +9,9 @@ const mongoDB = process.env.mongoDB;
 
 mongoose.connect(mongoDB, {
    useUnifiedTopology: true,
-   useNewUrlParser: true
+   useNewUrlParser: true,
+   useFindAndModify: false,
+   useCreateIndex: true
 })
    .then((db) => console.log(`DB is connect to ${db.connection.host}...`))
    .catch((err) => console.log(err));
