@@ -2,3 +2,4 @@
 .env
 node_modules
 src/public/upload/temp
+package-lock.json
