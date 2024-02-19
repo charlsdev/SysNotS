@@ -109,9 +109,11 @@ userControllers.renderLogin = passport.authenticate('local.login', {
 });
 
 userControllers.renderLogout = (req, res) => {
-   req.logout();
-   req.flash('warning_msg', 'Sesión cerrada. Vuelva pronto...');
-   res.redirect('/login');
+   req.logout(req.user, (err) => {
+      if (err) return next(err);
+      req.flash('warning_ntfs', 'Sesión cerrada. Vuelva pronto...');
+      res.redirect('/login');
+   });
 }
 
 module.exports = userControllers;
