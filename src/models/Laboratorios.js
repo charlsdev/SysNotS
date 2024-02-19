@@ -42,7 +42,8 @@ const LabSchema = new Schema({
       required: true
    }
 }, {
-   timestamps: true
+   timestamps: true,
+   versionKey: false
 });
 
 module.exports = model('Laboratorios', LabSchema);

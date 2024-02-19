@@ -21,7 +21,7 @@ commentsControllers.renderCommentsNew = async (req, res) => {
    const {
       user, username, comentario, profile
    } = req.body;
-   
+
    const newComments = new Comments({
       usuario: user, username: username, comentario: comentario, profile: profile
    });
@@ -60,19 +60,19 @@ commentsControllers.renderProfilePhoto = async (req, res) => {
             const tempPathPhoto = req.file.path;
             const sizePhoto = req.file.size;
             const targetPhoto = path.resolve(`src/public/upload/${imgUrl}${extPhoto}`);
-   
+
             if (extPhoto === '.jpg' || extPhoto === '.jpeg' || extPhoto === '.png') {
             // if (extPhoto === '.jpg') {
                if (sizePhoto < 2000000) {
                   await fse.copy(tempPathPhoto, targetPhoto);
-   
+
                   const { userProfile } = req.body;
                   const photoProfile = await User.findOne({ user: userProfile });
                   photoProfile.profile = imgName;
                   photoProfile.save();
 
-                  await Comments.update({usuario: userProfile}, { $set: { profile: imgName}}, {multi: true});
-                  
+                  await Comments.updateOne({usuario: userProfile}, { $set: { profile: imgName}}, {multi: true});
+
                   req.flash('success_msg', 'Foto de perfil guardada con éxito...');
                } else {
                   await fse.unlink(tempPathPhoto);
@@ -106,8 +106,8 @@ commentsControllers.renderProfilePhoto = async (req, res) => {
                photoProfile.profile = imgName;
                photoProfile.save();
 
-               await Comments.update({usuario: userProfile}, { $set: { profile: imgName}}, {multi: true});
-               
+               await Comments.updateOne({usuario: userProfile}, { $set: { profile: imgName}}, {multi: true});
+
                req.flash('success_msg', 'Foto de perfil guardada con éxito...');
             } else {
                await fse.unlink(tempPathPhoto);

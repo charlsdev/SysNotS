@@ -17,7 +17,8 @@ const NotasSchema = new Schema({
       type: Schema.ObjectId, ref: "User"
    }
 }, {
-   timestamps: true
+   timestamps: true,
+   versionKey: false
 })
 
 module.exports = model('Notas', NotasSchema);

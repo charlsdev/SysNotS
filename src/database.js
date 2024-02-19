@@ -7,11 +7,6 @@ const mongoDB = process.env.mongoDB;
 // const mongoDB = `mongodb://${hostBD}/${nameDB}`;
 //console.log(mongoDB)
 
-mongoose.connect(mongoDB, {
-   useUnifiedTopology: true,
-   useNewUrlParser: true,
-   useFindAndModify: false,
-   useCreateIndex: true
-})
+mongoose.connect(mongoDB)
    .then((db) => console.log(`DB is connect to ${db.connection.host}...`))
    .catch((err) => console.log(err));

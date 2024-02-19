@@ -1,5 +1,6 @@
 # Aqui se pone los archivos ignorados al subir
 .env
 node_modules
-src/public/upload/temp
+src/public/!upload/ui.svg
 package-lock.json
+pnpm-lock.yaml

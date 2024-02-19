@@ -10,8 +10,13 @@ passport.use('local.login', new localStrategy({
    // session: false
 }, async (req, username, password, done) => {
 
+   console.table({ username, password })
+
    // Confirmar si coincide el username
    const user = await User.findOne({user: username});
+
+   console.log(user);
+
    if (!user) {
       return done(null, false, { message: 'Usuario y/o contraseña no existentes...'});
    } else {
@@ -32,8 +37,10 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
-   await User.findById(id, (err, user) => {
-      // console.log(user.nombres);
-      done(err, user);
-   })
+   try {
+      const user = await User.findById(id).exec();
+      done(null, user);
+   } catch (err) {
+      done(err, null);
+   }
 });
